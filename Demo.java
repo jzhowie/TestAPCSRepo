@@ -1,11 +1,13 @@
 public class Demo {
 public static void main(String[] args) {
 	if (args.length == 0) {
-		printLoop(5);
+		//printLoop(5);
 	}
 	else {
 		printLoop(Integer.parseInt(args[0]));
 	}
+
+	System.out.println(arrayDeepToString(create2DArray(5, 3, 3)).replace("}, ","}, \n "));
 	/*
 	   int[] x1 = {1,2,3,34};
 	   int[] x2 = {1,2};
@@ -16,6 +18,17 @@ public static void main(String[] args) {
 	   System.out.println(arrToString(x2));
 	   System.out.println(arrayDeepToString(x6));
 	 */
+}
+
+public static int[][] create2DArray(int rows, int cols, int maxValue) {
+	int[][] newarr = new int[cols][rows];
+	for (int col = 0; col < newarr.length; col++) {
+		for (int row = 0; row < newarr[col].length; row++) {
+			int randint = (int) Math.round(Math.random() * maxValue);
+			newarr[col][row] = randint;
+		}
+	}
+	return newarr;
 }
 
 
