@@ -1,14 +1,23 @@
 public class Demo {
 public static void main(String[] args) {
 	if (args.length == 0) {
-		//printLoop(5);
+		printLoop(5);
 	}
 	else {
 		printLoop(Integer.parseInt(args[0]));
 	}
 
-	System.out.println(arrayDeepToString(create2DArray(5, 3, 3)).replace("}, ","}, \n "));
 	/*
+	   System.out.println(arrayDeepToString(create2DArrayRandomized(6, 4, 4)).replace("}, ","}, \n "));
+	   System.out.println();
+	   System.out.println(arrayDeepToString(create2DArrayRandomized(5, 4, 3)).replace("}, ","}, \n "));
+	   System.out.println();
+	   System.out.println(arrayDeepToString(create2DArrayRandomized(10, 20, 30)).replace("}, ","}, \n "));
+	   System.out.println();
+	   System.out.println(arrayDeepToString(create2DArrayRandomized(7, 2, 3)).replace("}, ","}, \n "));
+	   System.out.println();
+	   System.out.println(arrayDeepToString(create2DArrayRandomized(4, 2, 9)).replace("}, ","}, \n "));
+
 	   int[] x1 = {1,2,3,34};
 	   int[] x2 = {1,2};
 	   int[] x3 = {1,5,15,334,17,33};
@@ -18,6 +27,21 @@ public static void main(String[] args) {
 	   System.out.println(arrToString(x2));
 	   System.out.println(arrayDeepToString(x6));
 	 */
+}
+
+public static int[][] create2DArrayRandomized(int rows, int cols, int maxValue) {
+	int arr[][] = new int[rows][];
+	for (int i = 0; i < rows; i++) {
+		int rowlength = (int) Math.round(Math.random() * maxValue);
+		arr[i] = new int[rowlength];
+	}
+	for (int row = 0; row < arr.length; row++) {
+		for (int col = 0; col < arr[row].length; col++) {
+			int randint = (int) Math.round(Math.random() * maxValue);
+			arr[row][col] = randint;
+		}
+	}
+	return arr;
 }
 
 public static int[][] create2DArray(int rows, int cols, int maxValue) {
