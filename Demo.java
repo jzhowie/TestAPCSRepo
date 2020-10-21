@@ -21,11 +21,11 @@ public static void main(String[] args) {
 }
 
 public static int[][] create2DArray(int rows, int cols, int maxValue) {
-	int[][] newarr = new int[cols][rows];
-	for (int col = 0; col < newarr.length; col++) {
-		for (int row = 0; row < newarr[col].length; row++) {
+	int[][] newarr = new int[rows][cols];
+	for (int row = 0; row < newarr.length; row++) {
+		for (int col = 0; col < newarr[row].length; col++) {
 			int randint = (int) Math.round(Math.random() * maxValue);
-			newarr[col][row] = randint;
+			newarr[row][col] = randint;
 		}
 	}
 	return newarr;
