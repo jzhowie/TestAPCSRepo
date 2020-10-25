@@ -22,17 +22,19 @@ public static void main(String[] args) {
 	   System.out.println(arrayDeepToString(x6));
 	 */
 }
+public static int randominteger(int n) {
+	int randint = (int) Math.round((Math.random() * (n + 1)) - 0.5);
+	return randint;
+}
 
 public static int[][] create2DArrayRandomized(int rows, int cols, int maxValue) {
 	int arr[][] = new int[rows][];
 	for (int i = 0; i < rows; i++) {
-		int rowlength = (int) Math.round((Math.random() * (cols + 1)) - 0.5);
-		arr[i] = new int[rowlength];
+		arr[i] = new int[randominteger(cols)];
 	}
 	for (int row = 0; row < arr.length; row++) {
 		for (int col = 0; col < arr[row].length; col++) {
-			int randint = (int) Math.round((Math.random() * (maxValue + 1)) - 0.5);
-			arr[row][col] = randint;
+			arr[row][col] = randominteger(maxValue);
 		}
 	}
 	return arr;
@@ -42,8 +44,7 @@ public static int[][] create2DArray(int rows, int cols, int maxValue) {
 	int[][] newarr = new int[rows][cols];
 	for (int row = 0; row < newarr.length; row++) {
 		for (int col = 0; col < newarr[row].length; col++) {
-			int randint = (int) Math.round((Math.random() * (maxValue + 1)) - 0.5);
-			newarr[row][col] = randint;
+			newarr[row][col] = randominteger(maxValue);
 		}
 	}
 	return newarr;
